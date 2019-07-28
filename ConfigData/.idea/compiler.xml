@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="lab-3-client" />
+        <module name="Config Server" />
+        <module name="lab-4-verb" />
+        <module name="lab-4-eureka-server" />
+        <module name="lab-4-subject" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Config Server" target="1.8" />
+      <module name="lab-3-client" target="1.8" />
+      <module name="lab-4-eureka-server" target="11" />
+      <module name="lab-4-subject" target="11" />
+      <module name="lab-4-verb" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Config Server" options="-parameters" />
+      <module name="lab-3-client" options="-parameters" />
+      <module name="lab-4-eureka-server" options="-parameters" />
+      <module name="lab-4-subject" options="-parameters" />
+      <module name="lab-4-verb" options="-parameters" />
+    </option>
+  </component>
+</project>

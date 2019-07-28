@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../lab-3-server/Config Server.iml" filepath="$PROJECT_DIR$/../lab-3-server/Config Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ConfigData.iml" filepath="$PROJECT_DIR$/.idea/ConfigData.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab-3-client/lab-3-client.iml" filepath="$PROJECT_DIR$/../lab-3-client/lab-3-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab-4-eureka-server/lab-4-eureka-server.iml" filepath="$PROJECT_DIR$/../lab-4-eureka-server/lab-4-eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab-4-subject/lab-4-subject.iml" filepath="$PROJECT_DIR$/../lab-4-subject/lab-4-subject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab-4-verb/lab-4-verb.iml" filepath="$PROJECT_DIR$/../lab-4-verb/lab-4-verb.iml" />
+    </modules>
+  </component>
+</project>
