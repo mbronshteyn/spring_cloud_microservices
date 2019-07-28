@@ -6,9 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="lab-4-adjective" />
         <module name="Config Server" />
         <module name="lab-4-article" />
-        <module name="lab-4-eureka-server" />
+        <module name="Eureka Server" />
         <module name="lab-4-subject" />
         <module name="lab-3-client" />
         <module name="lab-4-verb" />
@@ -16,9 +17,10 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Config Server" target="1.8" />
+      <module name="Eureka Server" target="11" />
       <module name="lab-3-client" target="1.8" />
+      <module name="lab-4-adjective" target="11" />
       <module name="lab-4-article" target="11" />
-      <module name="lab-4-eureka-server" target="11" />
       <module name="lab-4-subject" target="11" />
       <module name="lab-4-verb" target="11" />
     </bytecodeTargetLevel>
@@ -26,9 +28,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Config Server" options="-parameters" />
+      <module name="Eureka Server" options="-parameters" />
       <module name="lab-3-client" options="-parameters" />
+      <module name="lab-4-adjective" options="-parameters" />
       <module name="lab-4-article" options="-parameters" />
-      <module name="lab-4-eureka-server" options="-parameters" />
       <module name="lab-4-subject" options="-parameters" />
       <module name="lab-4-verb" options="-parameters" />
     </option>
