@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/../lab-3-client/lab-3-client.iml" filepath="$PROJECT_DIR$/../lab-3-client/lab-3-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/../lab-4-adjective/lab-4-adjective.iml" filepath="$PROJECT_DIR$/../lab-4-adjective/lab-4-adjective.iml" />
       <module fileurl="file://$PROJECT_DIR$/../lab-4-article/lab-4-article.iml" filepath="$PROJECT_DIR$/../lab-4-article/lab-4-article.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../lab-4-noun/lab-4-noun.iml" filepath="$PROJECT_DIR$/../lab-4-noun/lab-4-noun.iml" />
       <module fileurl="file://$PROJECT_DIR$/../lab-4-subject/lab-4-subject.iml" filepath="$PROJECT_DIR$/../lab-4-subject/lab-4-subject.iml" />
       <module fileurl="file://$PROJECT_DIR$/../lab-4-verb/lab-4-verb.iml" filepath="$PROJECT_DIR$/../lab-4-verb/lab-4-verb.iml" />
     </modules>

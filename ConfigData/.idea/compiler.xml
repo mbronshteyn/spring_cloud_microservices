@@ -12,6 +12,7 @@
         <module name="Eureka Server" />
         <module name="lab-4-subject" />
         <module name="lab-3-client" />
+        <module name="lab-4-noun" />
         <module name="lab-4-verb" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="lab-3-client" target="1.8" />
       <module name="lab-4-adjective" target="11" />
       <module name="lab-4-article" target="11" />
+      <module name="lab-4-noun" target="11" />
       <module name="lab-4-subject" target="11" />
       <module name="lab-4-verb" target="11" />
     </bytecodeTargetLevel>
@@ -32,6 +34,7 @@
       <module name="lab-3-client" options="-parameters" />
       <module name="lab-4-adjective" options="-parameters" />
       <module name="lab-4-article" options="-parameters" />
+      <module name="lab-4-noun" options="-parameters" />
       <module name="lab-4-subject" options="-parameters" />
       <module name="lab-4-verb" options="-parameters" />
     </option>
