@@ -1,0 +1,3 @@
+[submodule "customer-service"]
+	path = customer-service
+	url = /Users/mbronshteyn/study/spring_cloud_microservices/customer-service
