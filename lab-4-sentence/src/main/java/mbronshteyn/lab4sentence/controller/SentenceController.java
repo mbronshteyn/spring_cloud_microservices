@@ -2,6 +2,7 @@ package mbronshteyn.lab4sentence.controller;
 
 import com.netflix.discovery.shared.Application;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,8 @@ import java.util.List;
 public class SentenceController {
 
   @Autowired
-  public DiscoveryClient client;
+  @Qualifier( "LoadBalanced" )
+  public RestTemplate restTemplate;
 
   @GetMapping("/sentence")
   public @ResponseBody
@@ -26,18 +28,11 @@ public class SentenceController {
         + getWord("LAB-4-VERB") + " "
         + getWord("LAB-4-ARTICLE") + " "
         + getWord("LAB-4-ADJECTIVE") + " "
-        + getWord("LAB-4-NOUN") + "."
+        + getWord("LAB-4-NOUN") + ".\n"
       ;
   }
 
   public String getWord(String service) {
-    List<ServiceInstance> list = client.getInstances(service);
-    if (list != null && list.size() > 0 ) {
-      URI uri = list.get(0).getUri();
-      if (uri !=null ) {
-        return (new RestTemplate()).getForObject(uri,String.class);
-      }
-    }
-    return null;
+        return restTemplate.getForObject( "http://" + service, String.class );
   }
 }
