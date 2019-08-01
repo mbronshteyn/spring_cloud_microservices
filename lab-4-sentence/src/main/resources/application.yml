@@ -1,6 +1,6 @@
 spring:
-  profiles:
-    active: sentence
+  application:
+    name: sentence
 
 eureka.client.serviceUrl.defaultZone: http://localhost:8010/eureka/
 server.port: 8020
