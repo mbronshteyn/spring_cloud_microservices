@@ -1,7 +1,7 @@
 ---
 spring:
   application:
-    name: lab-4-noun
+    name: noun
 
 eureka.client.serviceUrl.defaultZone: http://localhost:8010/eureka/
 
