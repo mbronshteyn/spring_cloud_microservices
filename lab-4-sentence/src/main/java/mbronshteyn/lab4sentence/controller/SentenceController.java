@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SentenceController {
 
-  @Value("${server.port}")
-  Long port;
-
   @Autowired
   SubjectRepo subjectRepo;
 
@@ -32,10 +29,16 @@ public class SentenceController {
 
   Logger logger = LoggerFactory.getLogger(this.getClass());
 
+  @Value("${server.port}")
+  Long port;
+
+  @GetMapping( "/port" )
+  public @ResponseBody Long getPort(){
+    return port;
+  }
+
   @GetMapping("/sentence")
   public @ResponseBody String getSentence() {
-
-    logger.info( "Logger class instance id: " + logger.getClass().toString() );
 
     return
         subjectRepo.getItem() + " "
