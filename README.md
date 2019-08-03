@@ -1,4 +1,4 @@
-# spring_cloud_microservices
+# Microservices with Spring Cloud
 
 Sample repository with Config server, Eureka server and Eureka clients
 
