@@ -1,6 +1,12 @@
 spring:
   application:
     name: sentence
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
 
 eureka.client.serviceUrl.defaultZone: http://localhost:8010/eureka/
 #   server.port: ${PORT:${SERVER_PORT:0}}
+

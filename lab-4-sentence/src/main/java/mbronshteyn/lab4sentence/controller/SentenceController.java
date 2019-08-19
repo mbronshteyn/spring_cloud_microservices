@@ -1,16 +1,21 @@
 package mbronshteyn.lab4sentence.controller;
 
+import mbronshteyn.lab4sentence.data.UserRepository;
 import mbronshteyn.lab4sentence.model.CustomException;
+import mbronshteyn.lab4sentence.model.User;
+import mbronshteyn.lab4sentence.model.shared.UserDTO;
 import mbronshteyn.lab4sentence.repo.*;
+import mbronshteyn.lab4sentence.service.UserService;
+import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.Map;
 
 @RestController
@@ -30,6 +35,12 @@ public class SentenceController {
 
   @Autowired
   NounRepo nounRepo;
+
+  @Autowired
+  UserService userService;
+
+  @Autowired
+  ModelMapper modelMapper;
 
   Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -54,11 +65,15 @@ public class SentenceController {
     throw new CustomException();
   }
 
+  @PostMapping( "/user" )
+  public @ResponseBody
+  ResponseEntity<UserDTO> createUser(@Valid @RequestBody User user ){
+    UserDTO userDTO = userService.createUser(modelMapper.map(user, UserDTO.class));
+   return new ResponseEntity( userDTO, HttpStatus.CREATED );
+  }
+
   @GetMapping("/sentence")
   public @ResponseBody String getSentence() {
-
-
-
     return
         subjectRepo.getItem() + " "
         + verbRepo.getItem() + " "
