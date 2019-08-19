@@ -9,8 +9,8 @@ import java.io.Serializable;
 @Component
 public class UserDTO extends User implements Serializable {
 
-  @JsonIgnore
   private String userId;
+
   @JsonIgnore
   private String ecnryptedPassword;
 
