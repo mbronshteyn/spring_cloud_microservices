@@ -5,6 +5,7 @@ import mbronshteyn.lab4sentence.data.UserRepository;
 import mbronshteyn.lab4sentence.model.shared.UserDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -19,16 +20,15 @@ public class UserServiceImpl implements UserService {
   @Autowired
   UserRepository userRepository;
 
+  @Autowired
+  BCryptPasswordEncoder bCryptPasswordEncoder;
+
   @Override
   public UserDTO createUser(UserDTO userDTO) {
     userDTO.setUserId( UUID.randomUUID().toString() );
 
     UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
-
-    // TODO: refactor encrypted password later
-    double random = Math.random();
-    userEntity.setEcnryptedPassword( "test" + random );
-
+    userEntity.setEcnryptedPassword( bCryptPasswordEncoder.encode( userDTO.getPassword()) );
     // configure email to be unique
     userEntity.setEmail( (int)(Math.random()*100) + userEntity.getEmail());
 
