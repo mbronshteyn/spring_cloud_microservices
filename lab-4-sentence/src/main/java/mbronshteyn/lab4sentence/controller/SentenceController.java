@@ -65,7 +65,7 @@ public class SentenceController {
     throw new CustomException();
   }
 
-  @PostMapping( "/user" )
+  @PostMapping( "/users" )
   public @ResponseBody
   ResponseEntity<UserDTO> createUser(@Valid @RequestBody User user ){
     UserDTO userDTO = userService.createUser(modelMapper.map(user, UserDTO.class));
