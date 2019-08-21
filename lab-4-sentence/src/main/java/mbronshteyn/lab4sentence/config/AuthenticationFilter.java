@@ -8,6 +8,7 @@ import mbronshteyn.lab4sentence.model.LoginRequest;
 import mbronshteyn.lab4sentence.model.shared.UserDTO;
 import mbronshteyn.lab4sentence.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +19,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -30,20 +33,19 @@ import java.util.Date;
 @Component
 public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
+  @Autowired
   private UserService userService;
 
+  @Autowired
   private Environment environment;
 
+  @Autowired
+  AuthenticationManager authenticationManager;
 
-
-  public AuthenticationFilter(
-    Environment environment,
-    UserService userService,
-    AuthenticationManager authenticationManager ){
-
-    this.userService = userService;
-    this.environment = environment;
-    setAuthenticationManager( authenticationManager );
+  @Autowired
+  @Override
+  public void setAuthenticationManager(AuthenticationManager authenticationManager) {
+    super.setAuthenticationManager(authenticationManager);
   }
 
   @Override
@@ -51,8 +53,6 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     try {
       LoginRequest creds = new ObjectMapper().readValue(request.getInputStream(), LoginRequest.class);
-
-      AuthenticationManager authenticationManager = getAuthenticationManager();
 
       Authentication authentication = authenticationManager.authenticate(
         new UsernamePasswordAuthenticationToken(

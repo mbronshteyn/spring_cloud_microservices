@@ -21,16 +21,18 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
   @Value( "${gateway.ip}" )
   public String gatewayIp;
 
+  @Autowired
   Environment environment;
+
+  @Autowired
   UserService userService;
+
+  @Autowired
   BCryptPasswordEncoder bCryptPasswordEncoder;
 
   @Autowired
-  public WebSecurity (Environment environment, UserService userService, BCryptPasswordEncoder bCryptPasswordEncoder){
-    this.environment = environment;
-    this.userService = userService;
-    this.bCryptPasswordEncoder = bCryptPasswordEncoder;
-  }
+  AuthenticationFilter authenticationFilter;
+
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
@@ -39,15 +41,9 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
       .antMatchers( "/port/**").permitAll()
       .antMatchers("/sentence/**").permitAll()
       .antMatchers("/**").hasIpAddress( gatewayIp )
-      .and().addFilter( getAuthenticationFilter() );
+      .and().addFilter( authenticationFilter );
 
     http.headers().frameOptions().disable();
-  }
-
-  public AuthenticationFilter getAuthenticationFilter() throws Exception{
-    AuthenticationFilter authenticationFilter = new AuthenticationFilter( environment, userService, authenticationManager() );
-//    authenticationFilter.setAuthenticationManager( authenticationManager() );
-    return authenticationFilter;
   }
 
   @Override
@@ -60,4 +56,5 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
   public AuthenticationManager authenticationManagerBean() throws Exception {
     return super.authenticationManagerBean();
   }
+
 }
