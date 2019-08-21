@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @ControllerAdvice
 public class AppExceptionHandler extends ResponseEntityExceptionHandler {
 
-    @ExceptionHandler( value = { Exception.class } )
+    @ExceptionHandler( value = { Exception.class, RuntimeException.class } )
     public ResponseEntity<Object> handleAnyException(Exception ex, WebRequest request){
 
         ErrorMessage errorMessage = ErrorMessage.Builder.newInstance()

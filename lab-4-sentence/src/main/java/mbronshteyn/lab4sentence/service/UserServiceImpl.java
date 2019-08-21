@@ -5,14 +5,19 @@ import mbronshteyn.lab4sentence.data.UserRepository;
 import mbronshteyn.lab4sentence.model.shared.UserDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements UserService  {
 
   @Autowired
   public ModelMapper modelMapper;
@@ -29,13 +34,29 @@ public class UserServiceImpl implements UserService {
 
     UserEntity userEntity = modelMapper.map(userDTO, UserEntity.class);
     userEntity.setEcnryptedPassword( bCryptPasswordEncoder.encode( userDTO.getPassword()) );
-    // configure email to be unique
-    userEntity.setEmail( (int)(Math.random()*100) + userEntity.getEmail());
+    userEntity.setEmail( userEntity.getEmail() );
 
     UserEntity savedEntity = userRepository.save(userEntity);
 
     UserDTO dto = modelMapper.map(savedEntity, UserDTO.class);
 
     return dto;
+  }
+
+  /**
+   * Username is an email
+   *
+   * @param email
+   * @return
+   * @throws UsernameNotFoundException
+   */
+  @Override
+  public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+    UserEntity userEntity = userRepository.findByEmail(email);
+
+    if( userEntity == null ) throw new UsernameNotFoundException( email );
+
+    return new User( email, userEntity.getEcnryptedPassword(),
+      true, true, true, true, new ArrayList<>());
   }
 }
