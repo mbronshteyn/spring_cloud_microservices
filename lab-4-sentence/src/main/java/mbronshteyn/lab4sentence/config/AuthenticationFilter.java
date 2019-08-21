@@ -37,10 +37,13 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
   private UserService userService;
 
   @Autowired
-  private Environment environment;
-
-  @Autowired
   AuthenticationManager authenticationManager;
+
+  @Value("${token.expiration_time}")
+  String tokenExpirationTime;
+
+  @Value("${token.secret}")
+  String tokenSecret;
 
   @Autowired
   @Override
@@ -79,8 +82,8 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
     String token = Jwts.builder()
       .setSubject( userDTO.getUserId() )
-      .setExpiration( new Date( System.currentTimeMillis() + Long.parseLong( environment.getProperty( "token.expiration_time") )))
-      .signWith( SignatureAlgorithm.HS512, environment.getProperty( "token.secret") )
+      .setExpiration( new Date( System.currentTimeMillis() + Long.parseLong( tokenExpirationTime )))
+      .signWith( SignatureAlgorithm.HS512, tokenSecret )
       .compact();
 
     response.addHeader( "token", token );

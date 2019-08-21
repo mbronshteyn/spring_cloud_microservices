@@ -22,9 +22,6 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
   public String gatewayIp;
 
   @Autowired
-  Environment environment;
-
-  @Autowired
   UserService userService;
 
   @Autowired
@@ -56,5 +53,4 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
   public AuthenticationManager authenticationManagerBean() throws Exception {
     return super.authenticationManagerBean();
   }
-
 }
