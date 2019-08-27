@@ -10,7 +10,18 @@ spring:
 eureka.client.serviceUrl.defaultZone: http://localhost:8010/eureka/
 #   server.port: ${PORT:${SERVER_PORT:0}}
 
+<<<<<<< Updated upstream
 gateway.ip: 192.168.1.107
 token.expiration_time: 86400000 # 10 days
 token.secret: jiukjkjfidjfidf7878ufidufewewdifudif
 
+=======
+management:
+  server:
+    port: 8082
+
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+>>>>>>> Stashed changes
