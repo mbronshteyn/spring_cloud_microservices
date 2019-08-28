@@ -1,2 +1,8 @@
-spring.cloud.config.server.git.uri: https://github.com/mbronshteyn/Microservices-With-Spring-Student-Files/blob/master/ConfigData/application.yml
 server.port: 8001
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mbronshteyn/ConfigData
+          clone-on-start: true
