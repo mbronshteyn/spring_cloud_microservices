@@ -1,4 +1,10 @@
 server.port: 8001
+
+management.endpoints.web.exposure.include: *
+
+spring.cloud.bus.refresh.enabled: true
+spring.cloud.bus.env.enabled: true
+
 spring:
   cloud:
     config:
@@ -6,3 +12,9 @@ spring:
         git:
           uri: https://github.com/mbronshteyn/ConfigData
           clone-on-start: true
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

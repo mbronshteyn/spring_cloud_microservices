@@ -6,14 +6,14 @@ spring:
       enabled: true
       settings:
         web-allow-others: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
 
 eureka.client.serviceUrl.defaultZone: http://localhost:8010/eureka/
 #   server.port: ${PORT:${SERVER_PORT:0}}
-
-
-gateway.ip: 192.168.1.107
-token.expiration_time: 86400000 # 10 days
-token.secret: jiukjkjfidjfidf7878ufidufewewdifudif
 
 
 management:

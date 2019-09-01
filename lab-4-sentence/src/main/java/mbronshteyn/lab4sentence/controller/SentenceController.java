@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import javax.validation.Valid;
 import java.util.Map;
 
 @RestController
+@RefreshScope
 public class SentenceController {
 
   @Autowired
@@ -47,12 +49,20 @@ public class SentenceController {
   @Value("${server.port}")
   Long port;
 
+  @Value("${token.secret}")
+  String token;
+
   @GetMapping( "/port" )
   public @ResponseBody Long getPort( @RequestHeader Map<String, String> headers){
     logger.info( "=============================================" );
     headers.forEach( ( key, value ) ->  logger.info( String.format( "Header Name: %s, Value: %s", key, value )));
     logger.info( "=============================================" );
     return port;
+  }
+
+  @GetMapping( "/token" )
+  public @ResponseBody String getToken(){
+      return token;
   }
 
   @GetMapping( "/exception" )
