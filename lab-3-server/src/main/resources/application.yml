@@ -1,6 +1,6 @@
 server.port: 8001
 
-management.endpoints.web.exposure.include: *
+management.endpoints.web.exposure.include: all
 
 spring.cloud.bus.refresh.enabled: true
 spring.cloud.bus.env.enabled: true

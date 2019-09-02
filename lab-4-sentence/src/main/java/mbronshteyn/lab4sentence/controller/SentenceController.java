@@ -23,6 +23,8 @@ import java.util.Map;
 @RefreshScope
 public class SentenceController {
 
+  Logger logger = LoggerFactory.getLogger( this.getClass() );
+
   @Autowired
   SubjectRepo subjectRepo;
 
@@ -43,8 +45,6 @@ public class SentenceController {
 
   @Autowired
   ModelMapper modelMapper;
-
-  Logger logger = LoggerFactory.getLogger(this.getClass());
 
   @Value("${server.port}")
   Long port;
@@ -84,12 +84,13 @@ public class SentenceController {
 
   @GetMapping("/sentence")
   public @ResponseBody String getSentence() {
-    return
-        subjectRepo.getItem() + " "
+      String msg = subjectRepo.getItem() + " "
         + verbRepo.getItem() + " "
         + articleRepo.getItem() + " "
         + adjectiveRepo.getItem() + " "
-        + nounRepo.getItem() + ".\n"
-      ;
+        + nounRepo.getItem() + ".\n" ;
+
+      logger.info( "SentenceController: " + msg );
+      return msg;
   }
 }

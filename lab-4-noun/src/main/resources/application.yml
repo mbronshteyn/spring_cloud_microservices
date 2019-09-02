@@ -1,1 +1,9 @@
 words: boat,book,vote,seat,backpack,partition,groundhog
+spring:
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    sender:
+      type: web
+
