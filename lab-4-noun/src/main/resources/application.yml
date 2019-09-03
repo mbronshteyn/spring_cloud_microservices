@@ -7,3 +7,5 @@ spring:
     sender:
       type: web
 
+logging:
+  file: noun.log

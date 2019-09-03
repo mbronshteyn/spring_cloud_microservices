@@ -1,1 +1,3 @@
 words: reasonable,leaky,suspicious,ordinary,unlikely
+logging:
+  file: adjective.log

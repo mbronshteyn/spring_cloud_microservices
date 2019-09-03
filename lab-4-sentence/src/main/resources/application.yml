@@ -25,4 +25,5 @@ eureka:
   client:
     healthcheck:
       enabled: true
-
+logging:
+  file: sentence.log
