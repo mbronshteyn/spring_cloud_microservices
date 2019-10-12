@@ -17,9 +17,9 @@ eureka.client.serviceUrl.defaultZone: http://localhost:8010/eureka/
 #   server.port: ${PORT:${SERVER_PORT:0}}
 
 
-management:
-  server:
-    port: 8082
+#management:
+#  server:
+#    port: 8082
 
 eureka:
   client:

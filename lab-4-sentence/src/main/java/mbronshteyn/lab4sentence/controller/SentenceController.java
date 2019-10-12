@@ -67,7 +67,7 @@ public class SentenceController {
 
   @GetMapping( "/exception" )
   public @ResponseBody Long getException() throws Exception {
-    throw new Exception("test");
+    throw new NullPointerException("test");
   }
 
   @GetMapping( "/custom-exception" )
