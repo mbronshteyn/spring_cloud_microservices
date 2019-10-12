@@ -38,6 +38,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
       .antMatchers( "/port/**").permitAll()
       .antMatchers( "/token/**").permitAll()
       .antMatchers("/sentence/**").permitAll()
+      .antMatchers("/exception/**").permitAll()
       .antMatchers("/**").hasIpAddress( gatewayIp )
       .and().addFilter( authenticationFilter );
 
