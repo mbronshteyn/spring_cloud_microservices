@@ -1,7 +1,10 @@
 Application Demo notes:
 
 Before:
-    1. Start Kafka ( necessary for Spring Cloud Bus demo )
+    1. Start Kafka
+        cd into ./kafka-docker directory
+        add env variable: export DOCKER_HOST_IP=127.0.0.1
+        start docker compose: docker-compose up -d
     2. Start Config Server
     3. Start Eureka
 
