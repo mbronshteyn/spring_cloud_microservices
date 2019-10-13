@@ -1,0 +1,314 @@
+{
+	"info": {
+		"_postman_id": "6da8df15-5ce5-4469-b333-3a1772bf5814",
+		"name": "SpringCloudMicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LuckyWord",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/lucky-word",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"lucky-word"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sentence",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sentence-client/sentence",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sentence-client",
+						"sentence"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:45000/exception",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "45000",
+					"path": [
+						"exception"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Custom Exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:45000/custom-exception",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "45000",
+					"path": [
+						"custom-exception"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Port through Eureka YML",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sentence-client/port",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sentence-client",
+						"port"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Secret Token",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/sentence-client/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sentence-client",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Config Bus Refresh",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8001/actuator/bus-refresh",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8001",
+					"path": [
+						"actuator",
+						"bus-refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"firstName\" : \"Mike\",\n\t\"lastName\" : \"Bronshteyn\",\n\t\"password\" : \"abc\",\n\t\"email\" : \"test@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/sentence-client/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sentence-client",
+						"users"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\t\"firstName\" : \"Mike\",\n\t\"lastName\" : \"Bronshteyn\",\n\t\"password\" : \"abc\",\n\t\"email\" : \"test@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/sentence-client/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sentence-client",
+						"users"
+					],
+					"query": [
+						{
+							"key": "Content-Type",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Port through Eureka YML apis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://apis.qa-guidedchoice.com/port",
+					"protocol": "https",
+					"host": [
+						"apis",
+						"qa-guidedchoice",
+						"com"
+					],
+					"path": [
+						"port"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Port through Eureka YML api.somehhoosstt.org",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "TEST-HEADER",
+						"value": "TEST_THIS_HEADER",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://api.somehhoosstt.org/port",
+					"protocol": "https",
+					"host": [
+						"api",
+						"somehhoosstt",
+						"org"
+					],
+					"path": [
+						"port"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway Actuator",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "host",
+						"value": "*.hystrix.com",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/sentence-client/port",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sentence-client",
+						"port"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exception",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
