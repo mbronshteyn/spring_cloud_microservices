@@ -2,3 +2,7 @@
 *.iml
 *.log
 *.log.*gz
+
+
+zk-single-kafka-single/
+.idea/
