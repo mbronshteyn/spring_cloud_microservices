@@ -34,13 +34,14 @@ Demo Spring Cloud Gateway with Load Balancer:
 Demo Feign Client
 
     - Along with previous step start all Noun, Adjective, Verb and Subject apps.
-    ```bash
+    
+    
         @FeignClient( "VERB" )
         public interface VerbRepo {
           @RequestMapping( method = RequestMethod.GET, value = "/")
           String getItem();
         }
-    ```
+   
     -  Run curl:
         curl -X GET \
           http://localhost:8080/sentence-client/sentence \
