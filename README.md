@@ -48,10 +48,6 @@ Demo Feign Client
           -H 'Accept: */*' \
           -H 'Host: localhost:8080'
 
-Demo Spring Cloud Bus:
-    
-    coming
-
 Demo Exception Handler:
 
     - Show class mbronshteyn.lab4sentence.AppExceptionHandler
@@ -65,9 +61,6 @@ Demo Exception Handler:
           http://127.0.0.1:45000/custom-exception \
           -H 'Host: 127.0.0.1:45000'
 
-Demo Spring Security:
-
-    coming
 
 
 
