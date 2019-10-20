@@ -6,7 +6,7 @@ Services communicate with each other using Feign Client with Ribbon LoadBalancer
 
 This repository is my Microservices Sandbox for the project I am doing at work. 
 
-Application Demo notes:
+Application notes:
 
 Before:
 
@@ -18,7 +18,7 @@ Before:
     - Start Config Server
     - Start Eureka
 
-Demo Spring Cloud Gateway with Load Balancer:
+Spring Cloud Gateway with Load Balancer:
 
     - Start Gateway
     - Start all three Sentence Applications
@@ -29,7 +29,7 @@ Demo Spring Cloud Gateway with Load Balancer:
           -H 'Host: localhost:8080'
     - Start and stop Sentence instances and verify correct load balancing
 
-Demo Feign Client
+Feign Client
 
     - Along with previous step start all Noun, Adjective, Verb and Subject apps.
     
@@ -46,7 +46,7 @@ Demo Feign Client
           -H 'Accept: */*' \
           -H 'Host: localhost:8080'
 
-Demo Exception Handler:
+Exception Handler:
 
     - Show class mbronshteyn.lab4sentence.AppExceptionHandler
     - Execute curl calls:
