@@ -21,7 +21,7 @@ Before:
 Spring Cloud Gateway with Load Balancer:
 
     - Start Gateway
-    - Start all three Sentence Applications
+    - Start all three Article, Adjective, Verb and Noun Applications
     - Run following request with Postman:
         curl -X GET \
           http://localhost:8080/sentence-client/port \
