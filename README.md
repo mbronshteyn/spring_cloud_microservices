@@ -4,7 +4,7 @@
 
 Services communicate with each other using Feign Client with Ribbon LoadBalancer
 
-This repository is my Microservices Sandbox for the project I am doing at work. 
+This repository is my Microservices Sandbox for the project I am currently working at my client. 
 
 Application notes:
 
