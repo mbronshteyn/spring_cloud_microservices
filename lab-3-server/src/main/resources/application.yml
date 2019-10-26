@@ -1,7 +1,5 @@
 server.port: 8001
 
-management.endpoints.web.exposure.include: all
-
 spring.cloud.bus.refresh.enabled: true
 spring.cloud.bus.env.enabled: true
 
@@ -13,3 +11,10 @@ spring:
           uri: https://github.com/mbronshteyn/ConfigData
           clone-on-start: true
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh, bus-env
+  security:
+    enabled: false
