@@ -16,5 +16,5 @@ management:
     web:
       exposure:
         include: bus-refresh, bus-env
-  security:
-    enabled: false
+#  security:
+#    enabled: false
