@@ -15,7 +15,7 @@ Before:
         -   add env variable: export DOCKER_HOST_IP=127.0.0.1
         -   start docker compose: docker-compose up -d
         
-    - Start Config Server.  Config server relies on connection to Kafka to Spring Cloud Bus.
+    - Start Config Server.  Config server relies on connection to Kafka for Spring Cloud Bus.
     - Start Eureka
 
 Spring Cloud Gateway with Load Balancer:
