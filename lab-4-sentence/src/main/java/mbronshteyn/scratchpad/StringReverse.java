@@ -1,6 +1,6 @@
 package mbronshteyn.scratchpad;
 
-public class Test {
+public class StringReverse {
 
   public static void main(String[] args) {
     String str = "abcd";
