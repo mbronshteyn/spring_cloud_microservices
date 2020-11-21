@@ -48,7 +48,7 @@ Feign Client
 
 Exception Handler:
 
-    - Show class mbronshteyn.lab4sentence.AppExceptionHandler
+    - Class mbronshteyn.lab4sentence.AppExceptionHandler
     - Execute curl calls:
     
         curl -X GET \
